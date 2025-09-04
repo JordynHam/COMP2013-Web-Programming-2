@@ -106,48 +106,78 @@ Deconstruction of an object creating variables with same studentNames of keys wi
 let studentName = student0.studentName;
 let dateOfBirth = student0.dateOfBirth;*/
 // ** ^^ == vv **
-let { id, studentName, dateOfBirth } = student0;
+/*let { id, studentName, dateOfBirth } = student0;
 console.log(id);
 console.log(studentName);
-console.log(dateOfBirth);
+console.log(dateOfBirth);*/
 
 /*
  *5
 Rest operator (...) is used to assign the rest of the data to a new object
 */
+let { id, studentName, dateOfBirth, ...restOfStudent } = student0;
+console.log(id);
+console.log(studentName);
+console.log(dateOfBirth);
+console.log(restOfStudent);
 
-/**
+/*
  *6
  Spread operator (...) to spread keys of an object in a new object
- */
+*/
+const shallowCopy = student0; //Shallow Copy; Copies memory address of the original, modifies with the original
+const deepCopy = { ...student0 }; //Deep Copy; Copies values from the original, standalone from the original
+student0.id = 123456;
+console.log(shallowCopy.id);
+console.log(deepCopy.id);
 
-/**
- *7
- Template literals is creating strings with JS code embedded like variables or statements
- using back tick (`) operator
- */
+//Omitting a value from deep copy
+//Sets value to omit to a seperate variable then the rest to the deep copy
+const { tuitionPaid, ...copyExceptTuitionPaid } = student0;
 
-/**
- *8
- * Arrow function is used to replace the old function declaration. Best used for one liner functions (lambda functions)
- */
+/*
+*7
+Template literals is creating strings with JS code embedded like variables or statements
+using back tick (`) operator
+*/
+console.log(
+  `The first student on the list has the name ${student0.studentName}`
+);
+
+/*
+*8
+Arrow function is used to replace the old function declaration. Best used for one liner functions (lambda functions)
+*/
 
 //old function declaration method
+function oldFunction() {
+  console.log("This is an old function");
+}
+
+oldFunction();
 
 //arrow function declaration method
+const arrowFunction = () => {
+  console.log("This is an arrow function");
+};
+
+arrowFunction();
 
 //Lambda function declaration method
+const lambdaFunction = () => "This is a lambda function"; //Lambda function with a return value of string
 
-/**
- *8
- Ternaries are short, one liners, if/else statements 
- */
+console.log(lambdaFunction());
 
-/**
- *9
- Short circuting with &&, ||, ?? operators
- NOTE: Falsy values are (false, 0 (the number zero), empty string, undefined, NaN, null)
- */
+/*
+*8
+Ternaries are short, one liners, if/else statements 
+*/
+
+/*
+*9
+Short circuting with &&, ||, ?? operators
+NOTE: Falsy values are (false, 0 (the number zero), empty string, undefined, NaN, null)
+*/
 
 //and operator work that both values need to be true
 
@@ -157,39 +187,38 @@ Rest operator (...) is used to assign the rest of the data to a new object
 
 //to solve this issue we use the Nullish coalescing operator
 
-/**
- *10
- Array map: To change all the values of an array at once using a statement
- stored in a new collection (array or object)
- */
+/*
+*10
+Array map: To change all the values of an array at once using a statement
+stored in a new collection (array or object)
+*/
 
 //to get all students names in a new array
 
-/**
- *11
- Array filter: to filter certian data in regarded to a statement stored in a new collection
- */
+/*
+*11
+Array filter: to filter certian data in regarded to a statement stored in a new collection
+*/
 
 //Filter all students born in 2002 using filter and includes method
 
-/**
- *12
- Array reduce: To reduce an array to a single value 
- Ex: display the total of all students tuition paid
- */
+/*
+*12
+Array reduce: To reduce an array to a single value 
+Ex: display the total of all students tuition paid
+*/
 
 //the reduce method takes two parameters, the first is a callback function and the second is the initial value.
 
-/**
- *13
- Array sort: to sort arrays ascendingly or descendingly.
- NOTE: This method changes the orginal array. If you want to avoid this, use .slice() method before sorting 
- 
- */
+/*
+*13
+Array sort: to sort arrays ascendingly or descendingly.
+NOTE: This method changes the orginal array. If you want to avoid this, use .slice() method before sorting 
+*/
 
 //sort students by paid tuition
 
-/**
+/*
  *14
  Working with immutable arrays
  */
