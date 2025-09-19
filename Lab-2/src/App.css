@@ -1,0 +1,27 @@
+body {
+  background-color: #e8e8e8;
+  color: #6b6b6b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.listing {
+  display: inline-block;
+  padding: 0.5rem;
+}
+.location {
+  color: black;
+}
+.price {
+  color: #766b82;
+}
+.high-rating {
+  color: green;
+}
+.low-rating {
+  color: red;
+}
