@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.colorBox {
+  border: 1px, white, solid;
+}
+
+.colorBoxes {
+  width: 260px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 5px, black, solid;
+}
